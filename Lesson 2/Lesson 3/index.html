@@ -13,7 +13,8 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        function Header() {
+        function Header(props) {
+            console.log(props);
             return (
                 <header>
                     <h1>Khalils Kitchen</h1>
@@ -21,16 +22,18 @@
             );
         }
         function Main() {
-            return (
+            <div>
+                return (
                 <section>\
-                    <p> Fire and amazing food </p>
+                    <p> Fire and {props.adjective}{" "}amazing food </p>
                 </section>
+            </div>
             );
         }
         ReactDOM.render(
             <div>
-                <Header />
-                <Main />
+                <Header name="Leek" />
+                <Main adjective="deliciious" />
             </div>,
 
 
